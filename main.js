@@ -11,7 +11,7 @@ const mainState = {
   create: () => {
     background = game.add.sprite(0, 0, 'background');
     music = game.add.audio('mainSong');
-    music.volume = 100;
+    music.volume = 0.1;
     music.loop = true;
     music.play();
   },
