@@ -3,14 +3,16 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "dev": "webpack -d --watch" 
+    "dev": "webpack -d --watch"
   },
   "author": "Hugo Dolemieux",
   "license": "ISC",
   "dependencies": {
+    "p2": "^0.7.1",
     "phaser": "^2.6.2"
   },
   "devDependencies": {
-    "ts-loader": "^2.1.0"
+    "ts-loader": "^2.1.0",
+    "webpack": "^2.6.1"
   }
 }
