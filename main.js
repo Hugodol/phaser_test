@@ -27,7 +27,7 @@ const mainState = {
     player.body.gravity.y = 500;
 
     cursors = game.input.keyboard.createCursorKeys();
-    jumpButton = game.input.keyboard.addKey(Phaser.Keyboard.SPACEBAR);
+    // jumpButton = game.input.keyboard.addKey(Phaser.Keyboard.SPACEBAR);
     
     // PLATFORM
     platform = game.add.physicsGroup();
@@ -57,9 +57,12 @@ const mainState = {
     } else if (cursors.right.isDown) {
       player.body.velocity.x = 250;
     }
-    if (jumpButton.isDown && (player.body.onFloor() || player.body.touching.down)) {
+    if (cursors.up.isDown && (player.body.onFloor() || player.body.touching.down)) {
       player.body.velocity.y = -400;
     }
+    // if (jumpButton.isDown && (player.body.onFloor() || player.body.touching.down)) {
+    //   player.body.velocity.y = -400;
+    // }
   },
 }
 
