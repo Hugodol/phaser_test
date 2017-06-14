@@ -10,10 +10,8 @@ let D;
 export default {
   playerCreate: () => {
     player = game.add.sprite(80, 0, 'player');
-    // player.scale.setTo(1);
     game.physics.arcade.enable(player);
     player.body.collideWorldBounds = true;
-    // player.body.gravity.y = 500;
     return player;
   },
   keyMapCreate: () => {
@@ -27,23 +25,49 @@ export default {
     player.body.velocity.x = 0;
     player.body.velocity.y = 0;
 
-    if (cursors.left.isDown) {
+    // MOVEMENT W/ WASD KEYS
+    if (A.isDown && W.isDown) {
       player.body.velocity.x = -250;
-    } else if (cursors.right.isDown) {
-      player.body.velocity.x = 250;
-    } else if (cursors.up.isDown) {
       player.body.velocity.y = -250;
-    } else if (cursors.down.isDown) {
+    } else if (W.isDown && D.isDown) {
+      player.body.velocity.y = -250;
+      player.body.velocity.x = 250;
+    } else if (D.isDown && S.isDown) {
+      player.body.velocity.x = 250;
       player.body.velocity.y = 250;
-    }
-
-    if (A.isDown) {
+    } else if (S.isDown && A.isDown) {
+      player.body.velocity.y = 250;
+      player.body.velocity.x = -250;
+    } else if (A.isDown) {
       player.body.velocity.x = -250;
     } else if (D.isDown) {
       player.body.velocity.x = 250;
     } else if (W.isDown) {
       player.body.velocity.y = -250;
     } else if (S.isDown) {
+      player.body.velocity.y = 250;
+    }
+
+    // MOVEMENT W/ CURSORS KEYS
+    if (cursors.left.isDown && cursors.up.isDown) {
+      player.body.velocity.x = -250;
+      player.body.velocity.y = -250;
+    } else if (cursors.up.isDown && cursors.right.isDown) {
+      player.body.velocity.y = -250;
+      player.body.velocity.x = 250;
+    } else if (cursors.right.isDown && cursors.down.isDown) {
+      player.body.velocity.x = 250;
+      player.body.velocity.y = 250;
+    } else if (cursors.down.isDown && cursors.left.isDown) {
+      player.body.velocity.y = 250;
+      player.body.velocity.x = -250;
+    } else if (cursors.left.isDown) {
+      player.body.velocity.x = -250;
+    } else if (cursors.right.isDown) {
+      player.body.velocity.x = 250;
+    } else if (cursors.up.isDown) {
+      player.body.velocity.y = -250;
+    } else if (cursors.down.isDown) {
       player.body.velocity.y = 250;
     }
   },
