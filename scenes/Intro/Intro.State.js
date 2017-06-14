@@ -10,7 +10,7 @@ const Intro = {
   preload: () => {
     game.stage.backgroundColor = '#85b5e1';
     game.load.image('platform', '../../graphics/box.svg');
-    game.load.image('player', '../../graphics/player.png');
+    game.load.image('player', '../../graphics/player_rpg.png');
     game.load.audio('mainSong', '../../sounds/mainSong.mp3');
   },
 
