@@ -25,12 +25,14 @@ export default {
     player.body.velocity.x = 0;
     player.body.velocity.y = 0;
 
+    // DASH WITH SPACEBAR
     if (dash.isDown) {
       speed = 1000;
     } else {
       speed = 250;
     }
 
+    // MOVEMENT KEYS WITH WASD
     if (WASD.A.isDown && WASD.W.isDown) {
       player.body.velocity.x = -speed;
       player.body.velocity.y = -speed;

@@ -15,7 +15,6 @@ const Intro = {
   },
 
   create: () => {
-
     // MAIN PLAYER
     mainPlayer = Player.playerCreate();
     Player.keyMapCreate();
@@ -25,6 +24,7 @@ const Intro = {
 
     // MUSIC & SOUND
     Audio.mainSong();
+
   },
 
   update: () => {
