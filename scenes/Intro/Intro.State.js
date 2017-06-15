@@ -2,9 +2,14 @@ import game from '../../main';
 import Player from '../../player/Player';
 import Platforms from './Platforms';
 import Audio from './Audio';
+import keyMap from '../../player/keyMap';
+import movementCursors from '../../player/keyMap/movement.Cursors';
+import movementWASD from '../../player/keyMap/movement.WASD';
 
 let mainPlayer;
 let allPlatforms;
+let cursors;
+let WASD;
 
 const Intro = {
   preload: () => {
@@ -18,7 +23,9 @@ const Intro = {
 
     // MAIN PLAYER
     mainPlayer = Player.playerCreate();
-    Player.keyMapCreate();
+    // Player.keyMapCreate();
+    cursors = keyMap.cursors();
+    WASD = keyMap.WASD();
 
     // PLATFORMS
     allPlatforms = Platforms.platformsCreate();
@@ -29,7 +36,9 @@ const Intro = {
 
   update: () => {
     game.physics.arcade.collide(mainPlayer, allPlatforms);
-    Player.playerUpdate();
+    // Player.playerUpdate();
+    movementCursors(mainPlayer, cursors);
+    movementWASD(mainPlayer, WASD);
   },
 }
 
