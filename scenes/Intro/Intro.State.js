@@ -1,4 +1,4 @@
-import game from '../../main';``
+import game from '../../main';
 import Player from '../../player/Player';
 import Platforms from './Platforms';
 import Audio from './Audio';
