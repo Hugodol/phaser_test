@@ -7,7 +7,7 @@ let speed = 250;
 
 export default {
   playerCreate: () => {
-    player = game.add.sprite(80, 0, 'player');
+    player = game.add.sprite(400, 300, 'player');
     game.physics.arcade.enable(player);
     player.body.collideWorldBounds = true;
     return player;
@@ -27,7 +27,7 @@ export default {
 
     // DASH WITH SPACEBAR
     if (dash.isDown) {
-      speed = 1000;
+      speed = 2000;
     } else {
       speed = 250;
     }
